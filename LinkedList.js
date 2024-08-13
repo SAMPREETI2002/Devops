@@ -47,4 +47,3 @@ itemList.add(new Item('Cherry', 2.2));
  
 itemList.printList();
  
-has context menu
