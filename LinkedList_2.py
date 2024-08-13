@@ -140,7 +140,7 @@ List = LinkedList()
 # item_2 = Item(['Cake',420])
 head = List.insertAtEnd('Pizza',350)
 # print(List.head.itemName)
-head = List.insertAtEnd('Cake',420)
+head = List.insertAtEnd('chocolate',420)
 # print(List.head.next.itemName)
 List.printToEnd()
 
