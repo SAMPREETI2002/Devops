@@ -1,0 +1,32 @@
+pipeline {
+    agent any // Use any available Jenkins agent
+    environment {
+        GIT_REPOSITORY = 'https://github.com/kritika-2907/Devops.git'
+        BRANCH = 'main' // Update this if your default branch name is different
+    }
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clone the repository from GitHub using the credentials
+                git url: "${env.GIT_REPOSITORY}", branch: "${env.BRANCH}"
+            }
+        }
+        stage('Run Python File') {
+            steps {
+                // Run the Python file using the bat command on Windows
+                bat 'python LinkedList_py.py build'
+            }
+        }
+        stage('Run Test File'){
+            steps{
+                // Run Python Test file
+            bat 'python LinkedListUnitTest.py test'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline completed'
+        }
+    }
+}
